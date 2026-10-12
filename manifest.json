@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "X Follower Numbers",
+  "version": "0.1.0",
+  "description": "在 X (Twitter) 页面上直接显示用户的粉丝数量，数据来自 X 页面自身的请求。",
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["injected.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
